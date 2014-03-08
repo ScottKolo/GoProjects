@@ -15,6 +15,7 @@ func main() {
 	_, err := fmt.Scanf("%d", &n)
 	if err != nil {
 		fmt.Println("Error:", err)
+		return
 	}
 	if n > 200 {
 		fmt.Println("Error:", n, "> 200 - too many decimal places!")
