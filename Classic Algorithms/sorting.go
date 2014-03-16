@@ -56,13 +56,11 @@ func main() {
 func BubbleSort(inputArray []int) (sortedArray []int) {
 	array := make([]int, len(inputArray))
 	copy(array, inputArray)
-	var temp int
 	for i := 0; i < len(array)-1; i++ {
 		for j := 0; j < len(array)-1; j++ {
 			if array[j] > array[j+1] {
-				temp = array[j]
-				array[j] = array[j+1]
-				array[j+1] = temp
+				// Idiomatic Go swap
+				array[j], array[j+1] = array[j+1], array[j]
 			}
 		}
 	}
