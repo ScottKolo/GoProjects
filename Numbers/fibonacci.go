@@ -15,7 +15,7 @@ func main() {
 	if n < 1 {
 		fmt.Println("Error:", n, "is too low - no sequence can be generated.")
 		return
-	} else if n > int(^uint(0) >> 1) {
+	} else if n > int(^uint(0)>>1) {
 		fmt.Println("Error:", n, "is too big!  Try a smaller number.")
 		return
 	}

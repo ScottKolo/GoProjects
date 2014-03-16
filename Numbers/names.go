@@ -1,4 +1,4 @@
-// Show how to spell out a number in English. You can use a preexisting 
+// Show how to spell out a number in English. You can use a preexisting
 // implementation or roll your own, but you should support inputs up to at
 // least one million.
 
@@ -20,7 +20,7 @@ func main() {
 	}
 
 	fmt.Println(n, "spelled out in English:")
-	fmt.Println(GetNumberName(n));
+	fmt.Println(GetNumberName(n))
 }
 
 func GetNumberName(n int) string {
@@ -37,7 +37,7 @@ func GetNumberName(n int) string {
 
 	if exceptionsMap[n] != "" {
 		// Check right away if it's an exception
-		name = exceptionsMap[n];
+		name = exceptionsMap[n]
 	} else if n > 0 && n < 10 {
 		name = onesMap[n]
 	} else if n >= 20 && n < 100 {
@@ -49,14 +49,14 @@ func GetNumberName(n int) string {
 		}
 	} else if n >= 100 && n < 1000 {
 		hundreds := n / 100
-		tensAndLower := n - hundreds * 100
+		tensAndLower := n - hundreds*100
 		name = onesMap[hundreds] + " hundred"
 		if tensAndLower > 0 {
 			name += " " + GetNumberName(tensAndLower)
 		}
 	} else if n >= 1000 && n < 1000000 {
 		thousands := n / 1000
-		hundredsAndLower := n - thousands * 1000
+		hundredsAndLower := n - thousands*1000
 		name = GetNumberName(thousands) + " thousand"
 		if hundredsAndLower >= 100 {
 			name += ", " + GetNumberName(hundredsAndLower)
@@ -74,17 +74,17 @@ func GetNumberName(n int) string {
 
 // Map for exceptions that don't follow the rules above
 var exceptionsMap = map[int]string{
-	0:  "zero",
-	10: "ten",
-	11: "eleven",
-	12: "twelve",
-	13: "thirteen",
-	14: "fourteen",
-	15: "fifteen",
-	16: "sixteen",
-	17: "seventeen",
-	18: "eighteen",
-	19: "nineteen",
+	0:       "zero",
+	10:      "ten",
+	11:      "eleven",
+	12:      "twelve",
+	13:      "thirteen",
+	14:      "fourteen",
+	15:      "fifteen",
+	16:      "sixteen",
+	17:      "seventeen",
+	18:      "eighteen",
+	19:      "nineteen",
 	1000000: "one million",
 }
 

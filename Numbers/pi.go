@@ -29,13 +29,13 @@ func main() {
 	   For more information, see the following article:
 	   Plouffe, Simon. "On the computation of the nth decimal digit of various
 	   transcendental numbers." (1996) http://arxiv.org/pdf/0912.0303.pdf
-	   
+
 	   The general formula used is shown below:
 	                    ∞ n*2^n*(n!)^2
 	           π + 3 =  Σ ------------
 	                   n=1   (2*n)!
 	*/
-	pi := big.NewRat(0,1)
+	pi := big.NewRat(0, 1)
 	tempInt := big.NewInt(1)
 	term := big.NewRat(0.0, 1.0)
 
@@ -45,7 +45,7 @@ func main() {
 		top = top.Mul(top, tempInt)
 		tempInt = tempInt.Exp(tempInt.Set(fact(k)), big.NewInt(2), nil)
 		top = top.Mul(top, tempInt)
-		bottom := fact(2*k)
+		bottom := fact(2 * k)
 		term := term.SetFrac(top, bottom)
 		pi.Add(pi, term)
 	}
