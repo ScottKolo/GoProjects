@@ -30,15 +30,21 @@ func main() {
 
 	ccNum = ccNum[:i]
 
-	valid := luhnCheck(ccNum)
-	if valid {
-		fmt.Printf("Credit card number is a valid %s card\n", cardType(ccNum))
+	valid, cardType := ValidateCreditCard(ccNum)
+	if valid && cardType != "Unknown" {
+		fmt.Printf("Credit card number is a valid %s card\n", cardType)
 	} else {
 		fmt.Println("Credit card number is NOT valid!")
 	}
 }
 
-func cardType(ccNum []int) string {
+func ValidateCreditCard(ccNum []int) (valid bool, cardType string) {
+	valid = luhnCheck(ccNum)
+	cardType = getCardType(ccNum)
+	return valid, cardType
+}
+
+func getCardType(ccNum []int) string {
 	var sArray = make([]string, len(ccNum))
 	for i, n := range ccNum {
 		sArray[i] = strconv.Itoa(n)
@@ -70,8 +76,6 @@ func cardType(ccNum []int) string {
 	}
 	return "Unknown"
 }
-
-
 
 func luhnCheck(ccNum []int) bool {
 	checksum := 0
