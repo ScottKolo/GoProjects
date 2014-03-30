@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
-	"regexp"
 )
 
 func main() {
@@ -80,8 +80,8 @@ func getCardType(ccNum []int) string {
 func luhnCheck(ccNum []int) bool {
 	checksum := 0
 	for i, n := range ccNum {
-		if (i + len(ccNum)%2) % 2 == 0 {
-			checksum += sumDigits(2*n)
+		if (i+len(ccNum)%2)%2 == 0 {
+			checksum += sumDigits(2 * n)
 		} else {
 			checksum += n
 		}
