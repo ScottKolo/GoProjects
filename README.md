@@ -10,7 +10,7 @@ Numbers
 
 **Prime Factorization** - Have the user enter a number and find all Prime Factors (if there are any) and display them.
 
-**Next Prime Number** - Have the program find prime numbers until the user chooses to stop asking for the next one.
+[**Next Prime Number**](https://github.com/ScottKolo/GoProjects/blob/master/Numbers/nextprime.go) - Have the program find prime numbers until the user chooses to stop asking for the next one.
 
 **Find Cost of Tile to Cover W x H Floor** - Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
 
