@@ -21,7 +21,7 @@ func main() {
     fmt.Println("Error:", n, "is too big! Try an integer in [1, 25].")
     return
   }
-  if n < 1 {
+  if n < 0 {
     fmt.Println("Error:", n, "is too small! Try an integer in [1, 25].")
     return
   }
@@ -31,6 +31,9 @@ func main() {
 }
 
 func factorialLoop(n int) int {
+  if n == 0 {
+    return 1
+  }
   result := n
   for i := n-1; i > 1; i-- {
     result *= i
@@ -39,7 +42,7 @@ func factorialLoop(n int) int {
 }
 
 func factorialRecursive(n int) int {
-  if n == 1 {
+  if n == 0 {
     return 1
   }
   return n*factorialRecursive(n-1)
