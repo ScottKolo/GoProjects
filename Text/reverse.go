@@ -17,15 +17,9 @@ func main() {
     return
   }
 
-  text := make([]rune, len(input))
-  n := 0
+  text := []rune(input)
+  n := len(text)
 
-  for _, r := range(input) {
-    text[n] = rune(r)
-    n++
-  }
-
-  text = text[:n-1]
   for i := 0; i < n/2; i++ {
     text[i], text[n-i-2] = text[n-i-2], text[i]
   }
